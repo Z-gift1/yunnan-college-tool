@@ -1,0 +1,1272 @@
+/* ==================== 全局样式 ==================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    /* 主色调：专业蓝色系 */
+    --primary-blue: #0052D9;
+    --primary-blue-light: #0066FF;
+    --primary-blue-dark: #003D99;
+    --primary-blue-pale: #E6F0FF;
+    
+    /* 辅助色：成功金色/橙色 */
+    --accent-gold: #E6A23C;
+    --accent-gold-light: #FAD06B;
+    --accent-gold-dark: #C68620;
+    
+    /* 公办院校（蓝色系） */
+    --public-primary: #0052D9;
+    --public-bg: #E6F0FF;
+    --public-border: #B3D0FF;
+    
+    /* 民办院校（橙色系） */
+    --private-primary: #E6A23C;
+    --private-bg: #FFF8E6;
+    --private-border: #FFD699;
+    
+    /* 功能色 */
+    --success: #67C23A;
+    --success-light: #E1F3D8;
+    --warning: #E6A23C;
+    --danger: #F56C6C;
+    --danger-light: #FDE2E2;
+    --info: #409EFF;
+    
+    /* 文字颜色 */
+    --text-primary: #1A1A1A;
+    --text-secondary: #4A4A4A;
+    --text-muted: #8C8C8C;
+    
+    /* 背景色 */
+    --bg-color: #F5F7FA;
+    --bg-gradient-start: #F0F5FF;
+    --bg-gradient-end: #FAF5FF;
+    --card-bg: #FFFFFF;
+    
+    /* 阴影 */
+    --shadow-xs: 0 1px 3px rgba(0,0,0,0.04);
+    --shadow-sm: 0 2px 8px rgba(0,82,217,0.06);
+    --shadow-md: 0 4px 16px rgba(0,82,217,0.08);
+    --shadow-lg: 0 8px 32px rgba(0,82,217,0.12);
+    --shadow-glow: 0 0 20px rgba(0,102,255,0.15);
+    
+    /* 圆角 */
+    --radius-xs: 4px;
+    --radius-sm: 8px;
+    --radius-md: 12px;
+    --radius-lg: 16px;
+    --radius-xl: 24px;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'Helvetica Neue', sans-serif;
+    background: linear-gradient(135deg, var(--bg-gradient-start) 0%, var(--bg-gradient-end) 100%);
+    background-attachment: fixed;
+    color: var(--text-primary);
+    line-height: 1.7;
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 30px 20px;
+}
+
+/* ==================== 机构头部 ==================== */
+.brand-header {
+    background: linear-gradient(135deg, var(--primary-blue) 0%, var(--primary-blue-dark) 100%);
+    border-radius: var(--radius-lg);
+    padding: 28px 35px;
+    margin-bottom: 25px;
+    box-shadow: var(--shadow-lg);
+    position: relative;
+    overflow: hidden;
+}
+
+.brand-header::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -10%;
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+    border-radius: 50%;
+}
+
+.brand-header::after {
+    content: '';
+    position: absolute;
+    bottom: -30%;
+    left: -5%;
+    width: 200px;
+    height: 200px;
+    background: radial-gradient(circle, rgba(230,162,60,0.15) 0%, transparent 70%);
+    border-radius: 50%;
+}
+
+.brand-content {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.brand-logo {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.logo-icon {
+    width: 60px;
+    height: 60px;
+    background: rgba(255,255,255,0.2);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.logo-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.brand-name {
+    font-size: 26px;
+    font-weight: 800;
+    color: white;
+    letter-spacing: 2px;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.brand-slogan {
+    font-size: 13px;
+    color: rgba(255,255,255,0.9);
+    margin-top: 4px;
+    letter-spacing: 1px;
+}
+
+.brand-features {
+    display: flex;
+    gap: 25px;
+}
+
+.feature-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px;
+    background: rgba(255,255,255,0.15);
+    border-radius: var(--radius-xl);
+    backdrop-filter: blur(4px);
+}
+
+.feature-icon {
+    font-size: 16px;
+}
+
+.feature-text {
+    font-size: 13px;
+    color: white;
+    font-weight: 500;
+}
+
+/* ==================== 页面标题区 ==================== */
+.page-title {
+    background: white;
+    border-radius: var(--radius-lg);
+    padding: 25px 30px;
+    margin-bottom: 25px;
+    box-shadow: var(--shadow-sm);
+    border-left: 4px solid var(--accent-gold);
+}
+
+.title-wrapper {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.main-title {
+    font-size: 1.6em;
+    color: var(--primary-blue);
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.title-icon {
+    font-size: 1.2em;
+}
+
+.subtitle {
+    color: var(--text-secondary);
+    font-size: 0.95em;
+    margin-top: 8px;
+}
+
+.policy-info {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.policy-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 20px;
+    background: var(--primary-blue-pale);
+    border-radius: var(--radius-md);
+}
+
+.policy-label {
+    color: var(--primary-blue);
+    font-weight: 600;
+    font-size: 0.9em;
+}
+
+.policy-value {
+    color: var(--text-secondary);
+    font-size: 0.9em;
+}
+
+.policy-value strong {
+    color: var(--primary-blue);
+    font-weight: 700;
+}
+
+/* ==================== 输入表单区域 ==================== */
+.input-section {
+    background: white;
+    border-radius: var(--radius-lg);
+    padding: 30px;
+    margin-bottom: 25px;
+    box-shadow: var(--shadow-md);
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 28px;
+}
+
+.section-header h2 {
+    color: var(--text-primary);
+    font-size: 1.3em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 8px;
+}
+
+.section-icon {
+    font-size: 1.1em;
+}
+
+.section-desc {
+    color: var(--text-muted);
+    font-size: 0.9em;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 24px;
+    margin-bottom: 28px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 10px;
+    font-size: 0.95em;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.label-icon {
+    font-size: 1em;
+}
+
+.required {
+    color: var(--danger);
+}
+
+.input-wrapper,
+.select-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 14px 16px;
+    padding-right: 50px;
+    border: 2px solid #E8ECF0;
+    border-radius: var(--radius-sm);
+    font-size: 1em;
+    transition: all 0.3s ease;
+    background: white;
+    color: var(--text-primary);
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: var(--primary-blue);
+    box-shadow: 0 0 0 4px rgba(0,102,255,0.1);
+}
+
+.form-group input:hover,
+.form-group select:hover {
+    border-color: var(--primary-blue-light);
+}
+
+.form-group input::placeholder {
+    color: var(--text-muted);
+}
+
+.input-unit {
+    position: absolute;
+    right: 16px;
+    color: var(--text-muted);
+    font-size: 0.95em;
+    pointer-events: none;
+}
+
+.input-hint {
+    position: absolute;
+    right: 16px;
+    color: var(--accent-gold);
+    font-size: 0.8em;
+    pointer-events: none;
+}
+
+.select-arrow {
+    position: absolute;
+    right: 16px;
+    color: var(--text-muted);
+    font-size: 0.7em;
+    pointer-events: none;
+}
+
+/* ==================== 按钮样式 ==================== */
+.form-actions {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.btn {
+    padding: 14px 36px;
+    border: none;
+    border-radius: var(--radius-md);
+    font-size: 1.05em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, var(--primary-blue-light) 0%, var(--primary-blue) 100%);
+    color: white;
+    box-shadow: 0 4px 14px rgba(0,102,255,0.35);
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0,102,255,0.45);
+}
+
+.btn-primary:active {
+    transform: translateY(0);
+}
+
+.btn-secondary {
+    background: #F5F5F5;
+    color: var(--text-secondary);
+    border: 2px solid #E8ECF0;
+}
+
+.btn-secondary:hover {
+    background: #EFEFEF;
+    border-color: #D8D8D8;
+}
+
+.btn-print {
+    background: linear-gradient(135deg, var(--accent-gold-light) 0%, var(--accent-gold) 100%);
+    color: white;
+    box-shadow: 0 4px 14px rgba(230,162,60,0.35);
+}
+
+.btn-print:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(230,162,60,0.45);
+}
+
+.btn-icon {
+    font-size: 1.2em;
+}
+
+/* 打印按钮区域 */
+.print-action-bar {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.print-footer {
+    text-align: center;
+    padding: 20px;
+}
+
+/* ==================== 加载提示 ==================== */
+.loading {
+    text-align: center;
+    padding: 50px;
+    background: white;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+}
+
+.loading-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.loading-spinner {
+    width: 70px;
+    height: 70px;
+    position: relative;
+    margin-bottom: 25px;
+}
+
+.spinner-ring {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border: 4px solid transparent;
+    border-top-color: var(--primary-blue);
+    border-radius: 50%;
+    animation: spin 1.2s linear infinite;
+}
+
+.spinner-ring:nth-child(2) {
+    width: 80%;
+    height: 80%;
+    top: 10%;
+    left: 10%;
+    border-top-color: var(--accent-gold);
+    animation-delay: -0.4s;
+}
+
+.spinner-ring:nth-child(3) {
+    width: 60%;
+    height: 60%;
+    top: 20%;
+    left: 20%;
+    border-top-color: var(--success);
+    animation-delay: -0.8s;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+.loading-text {
+    color: var(--text-primary);
+    font-size: 1.15em;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.loading-sub {
+    color: var(--text-muted);
+    font-size: 0.9em;
+}
+
+/* ==================== 结果展示 ==================== */
+.results-section {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+}
+
+.result-card {
+    background: white;
+    border-radius: var(--radius-lg);
+    padding: 28px;
+    box-shadow: var(--shadow-md);
+    page-break-inside: avoid;
+}
+
+.result-card h2 {
+    color: var(--text-primary);
+    margin-bottom: 20px;
+    padding-bottom: 14px;
+    border-bottom: 2px solid var(--primary-blue-pale);
+    font-size: 1.2em;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.card-icon {
+    font-size: 1.1em;
+}
+
+/* ==================== 学校卡片 ==================== */
+.school-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+/* 梯度分类标题 */
+.tier-title {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 14px;
+    padding: 12px 18px;
+    border-radius: var(--radius-sm);
+    font-weight: 700;
+    font-size: 1em;
+}
+
+.tier-title.chong {
+    background: linear-gradient(135deg, #FFF1F0 0%, #FFDDD8 100%);
+    color: #C53E3E;
+    border-left: 4px solid #F56C6C;
+}
+
+.tier-title.wen {
+    background: linear-gradient(135deg, #FFF8E6 0%, #FFEFC4 100%);
+    color: #B8760E;
+    border-left: 4px solid #E6A23C;
+}
+
+.tier-title.bao {
+    background: linear-gradient(135deg, #F0F9EB 0%, #D4EDBC 100%);
+    color: #3D7E32;
+    border-left: 4px solid #67C23A;
+}
+
+/* 学校卡片 */
+.school-card {
+    display: flex;
+    background: white;
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+    transition: all 0.3s ease;
+    border: 1px solid #F0F0F0;
+    page-break-inside: avoid;
+}
+
+.school-card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-md);
+}
+
+.school-card.public {
+    border-left: 5px solid var(--public-primary);
+}
+
+.school-card.private {
+    border-left: 5px solid var(--private-primary);
+}
+
+.school-info {
+    flex: 1;
+    padding: 18px;
+}
+
+.school-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 12px;
+    flex-wrap: wrap;
+}
+
+.school-name {
+    font-size: 1.1em;
+    font-weight: 700;
+    color: var(--text-primary);
+}
+
+.school-badge {
+    padding: 4px 12px;
+    border-radius: 14px;
+    font-size: 0.8em;
+    font-weight: 600;
+    background: var(--public-primary);
+    color: white;
+}
+
+.school-card.private .school-badge:first-of-type {
+    background: var(--private-primary);
+}
+
+.school-score {
+    display: flex;
+    gap: 25px;
+    margin-bottom: 10px;
+}
+
+.score-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.score-label {
+    color: var(--text-muted);
+    font-size: 0.9em;
+}
+
+.score-value {
+    font-weight: 700;
+    color: var(--text-primary);
+}
+
+.score-value.high {
+    color: var(--danger);
+}
+
+.school-location {
+    color: var(--text-secondary);
+    font-size: 0.9em;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.school-majors {
+    margin-bottom: 10px;
+}
+
+.majors-label {
+    color: var(--text-muted);
+    font-size: 0.85em;
+    margin-bottom: 6px;
+}
+
+.majors-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+.major-tag {
+    padding: 4px 12px;
+    background: var(--primary-blue-pale);
+    color: var(--primary-blue);
+    border-radius: 12px;
+    font-size: 0.85em;
+}
+
+.major-tag.highlight {
+    background: var(--accent-gold-light);
+    color: var(--accent-gold-dark);
+    font-weight: 600;
+}
+
+.school-fee {
+    color: var(--text-secondary);
+    font-size: 0.9em;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.school-highlights {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.highlight-item {
+    padding: 3px 10px;
+    background: #F9F9F9;
+    color: var(--text-secondary);
+    border-radius: 8px;
+    font-size: 0.82em;
+}
+
+/* ==================== 就业分析 ==================== */
+.major-employment-card {
+    background: var(--bg-color);
+    padding: 22px;
+    border-radius: var(--radius-md);
+}
+
+.major-employment-card h3 {
+    color: var(--text-primary);
+    margin-bottom: 16px;
+    font-size: 1.1em;
+}
+
+.employment-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 14px;
+}
+
+.employment-item {
+    background: white;
+    padding: 14px;
+    border-radius: var(--radius-sm);
+    border: 1px solid #E8ECF0;
+}
+
+.employment-item h4 {
+    color: var(--text-muted);
+    font-size: 0.85em;
+    margin-bottom: 6px;
+}
+
+.employment-item p {
+    color: var(--text-primary);
+    font-size: 0.95em;
+}
+
+.employment-item.salary {
+    background: var(--success-light);
+    border-color: #C8E6C3;
+}
+
+.employment-item.salary p {
+    color: var(--success);
+    font-weight: 700;
+    font-size: 1.1em;
+}
+
+/* ==================== 考公岗位 ==================== */
+.job-category {
+    background: var(--bg-color);
+    padding: 22px;
+    border-radius: var(--radius-md);
+}
+
+.job-category h3 {
+    color: var(--text-primary);
+    margin-bottom: 16px;
+    font-size: 1.1em;
+}
+
+.job-dept {
+    display: inline-block;
+    padding: 5px 14px;
+    background: var(--primary-blue-pale);
+    color: var(--primary-blue);
+    border-radius: 14px;
+    font-size: 0.9em;
+    margin: 5px 5px 5px 0;
+}
+
+.job-dept.high {
+    background: var(--accent-gold-light);
+    color: var(--accent-gold-dark);
+}
+
+.job-tips {
+    margin-top: 16px;
+    padding: 14px;
+    background: white;
+    border-radius: var(--radius-sm);
+    border-left: 4px solid var(--primary-blue);
+}
+
+.job-tips h4 {
+    color: var(--text-primary);
+    margin-bottom: 10px;
+    font-size: 0.95em;
+}
+
+.job-tips ul {
+    margin-left: 20px;
+    color: var(--text-secondary);
+    font-size: 0.9em;
+}
+
+.job-tips li {
+    margin-bottom: 5px;
+}
+
+/* ==================== 填报建议 ==================== */
+.advice-content {
+    background: var(--bg-color);
+    padding: 22px;
+    border-radius: var(--radius-md);
+}
+
+.advice-content h3 {
+    color: var(--text-primary);
+    margin-bottom: 14px;
+    font-size: 1.05em;
+}
+
+.advice-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 14px;
+    margin-bottom: 18px;
+}
+
+.advice-card {
+    padding: 16px;
+    border-radius: var(--radius-sm);
+}
+
+.advice-card h4 {
+    margin-bottom: 10px;
+    font-size: 1em;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.advice-card p {
+    font-size: 0.88em;
+    color: var(--text-secondary);
+}
+
+.advice-card.chong {
+    background: linear-gradient(135deg, #FFF1F0 0%, #FFDDD8 100%);
+    color: #C53E3E;
+}
+
+.advice-card.wen {
+    background: linear-gradient(135deg, #FFF8E6 0%, #FFEFC4 100%);
+    color: #B8760E;
+}
+
+.advice-card.bao {
+    background: linear-gradient(135deg, #F0F9EB 0%, #D4EDBC 100%);
+    color: #3D7E32;
+}
+
+/* ==================== 页脚 ==================== */
+.footer {
+    text-align: center;
+    padding: 30px 20px;
+    margin-top: 30px;
+}
+
+.footer-brand {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 12px;
+}
+
+.footer-logo {
+    font-size: 1.5em;
+}
+
+.footer-org {
+    font-size: 1.1em;
+    font-weight: 700;
+    color: var(--primary-blue);
+}
+
+.footer-note {
+    color: var(--accent-gold);
+    font-size: 0.9em;
+    margin-bottom: 6px;
+}
+
+.footer-year {
+    color: var(--text-muted);
+    font-size: 0.85em;
+}
+
+/* ==================== 响应式设计 ==================== */
+@media (max-width: 768px) {
+    .container {
+        padding: 15px;
+    }
+    
+    .brand-header {
+        padding: 20px;
+    }
+    
+    .brand-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .brand-logo {
+        flex-direction: column;
+    }
+    
+    .brand-features {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .feature-item {
+        justify-content: center;
+    }
+    
+    .brand-name {
+        font-size: 22px;
+    }
+    
+    .page-title {
+        padding: 20px;
+    }
+    
+    .policy-info {
+        flex-direction: column;
+        gap: 12px;
+    }
+    
+    .policy-item {
+        justify-content: center;
+    }
+    
+    .input-section {
+        padding: 20px;
+    }
+    
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .form-actions {
+        flex-direction: column;
+    }
+    
+    .btn {
+        width: 100%;
+    }
+    
+    .main-title {
+        font-size: 1.3em;
+        flex-direction: column;
+    }
+    
+    .school-card {
+        flex-direction: column;
+    }
+    
+    .school-score {
+        flex-direction: column;
+        gap: 8px;
+    }
+}
+
+/* ==================== 打印样式 ==================== */
+@media print {
+    /* 全局打印设置 */
+    @page {
+        size: A4;
+        margin: 12mm;
+    }
+    
+    body {
+        background: white !important;
+        font-size: 10pt;
+        line-height: 1.4;
+        color: #000;
+    }
+    
+    .container {
+        max-width: 100%;
+        padding: 0;
+        margin: 0;
+    }
+    
+    /* 隐藏不需要打印的元素 */
+    .brand-header,
+    .input-section,
+    .print-action-bar,
+    .print-footer,
+    .btn,
+    .loading,
+    .footer {
+        display: none !important;
+    }
+    
+    /* 显示打印头部 */
+    .results-section::before {
+        display: block;
+        content: "云南高考志愿填报智能分析报告";
+        font-size: 16pt;
+        font-weight: bold;
+        text-align: center;
+        padding: 15px 0;
+        border-bottom: 2px solid #0052D9;
+        margin-bottom: 15px;
+        color: #0052D9;
+    }
+    
+    /* 结果卡片打印样式 */
+    .results-section {
+        display: block !important;
+    }
+    
+    .result-card {
+        background: white !important;
+        box-shadow: none !important;
+        border: 1px solid #CCC;
+        border-radius: 4px;
+        padding: 12px;
+        margin-bottom: 15px;
+        page-break-inside: avoid;
+        page-break-after: auto;
+    }
+    
+    .result-card h2 {
+        font-size: 12pt;
+        color: #000;
+        border-bottom: 1px solid #333;
+        padding-bottom: 6px;
+        margin-bottom: 10px;
+    }
+    
+    /* 学校列表打印样式 */
+    .school-list {
+        gap: 8px;
+    }
+    
+    .tier-title {
+        background: #F0F0F0 !important;
+        color: #000 !important;
+        padding: 6px 10px;
+        margin-bottom: 8px;
+        page-break-after: avoid;
+    }
+    
+    .school-card {
+        border: 1px solid #BBB !important;
+        border-left-width: 4px !important;
+        box-shadow: none !important;
+        margin-bottom: 8px;
+        page-break-inside: avoid;
+    }
+    
+    .school-card.public {
+        border-left-color: #0052D9 !important;
+    }
+    
+    .school-card.private {
+        border-left-color: #E6A23C !important;
+    }
+    
+    .school-info {
+        padding: 8px;
+    }
+    
+    .school-header {
+        margin-bottom: 6px;
+    }
+    
+    .school-name {
+        font-size: 11pt;
+        color: #000;
+    }
+    
+    .school-badge {
+        padding: 2px 6px;
+        font-size: 8pt;
+    }
+    
+    .school-score {
+        margin-bottom: 4px;
+    }
+    
+    .score-label,
+    .score-value {
+        font-size: 9pt;
+    }
+    
+    .school-location {
+        font-size: 9pt;
+        color: #333;
+    }
+    
+    .major-tag {
+        padding: 2px 5px;
+        font-size: 8pt;
+        background: #F5F5F5 !important;
+        color: #333 !important;
+    }
+    
+    .major-tag.highlight {
+        background: #E0E0E0 !important;
+        font-weight: bold;
+    }
+    
+    .school-fee,
+    .school-highlights {
+        font-size: 8pt;
+        color: #333;
+    }
+    
+    .highlight-item {
+        background: #F5F5F5 !important;
+        color: #333 !important;
+        padding: 1px 4px;
+        font-size: 8pt;
+    }
+    
+    /* 就业分析打印样式 */
+    .major-employment-card {
+        background: white !important;
+        padding: 8px;
+        border: 1px solid #DDD;
+    }
+    
+    .major-employment-card h3 {
+        font-size: 10pt;
+        color: #000;
+    }
+    
+    .employment-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 6px;
+    }
+    
+    .employment-item {
+        background: #FAFAFA !important;
+        padding: 6px;
+        border: 1px solid #EEE;
+    }
+    
+    .employment-item h4 {
+        font-size: 8pt;
+        color: #666;
+    }
+    
+    .employment-item p {
+        font-size: 9pt;
+        color: #000;
+    }
+    
+    .employment-item.salary {
+        background: #F0FFF0 !important;
+    }
+    
+    /* 考公岗位打印样式 */
+    .job-category {
+        background: white !important;
+        padding: 8px;
+        border: 1px solid #DDD;
+    }
+    
+    .job-category h3 {
+        font-size: 10pt;
+        color: #000;
+    }
+    
+    .job-dept {
+        background: #F0F0F0 !important;
+        color: #333 !important;
+        padding: 2px 6px;
+        font-size: 9pt;
+    }
+    
+    .job-tips {
+        background: #FAFAFA !important;
+        border-left-color: #999 !important;
+        padding: 6px;
+    }
+    
+    .job-tips h4 {
+        font-size: 9pt;
+        color: #000;
+    }
+    
+    .job-tips ul {
+        font-size: 8pt;
+        color: #333;
+    }
+    
+    /* 填报建议打印样式 */
+    .advice-content {
+        background: white !important;
+        padding: 8px;
+    }
+    
+    .advice-content h3 {
+        font-size: 10pt;
+        color: #000;
+    }
+    
+    .advice-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 8px;
+    }
+    
+    .advice-card {
+        padding: 8px;
+        border: 1px solid #DDD;
+    }
+    
+    .advice-card.chong {
+        background: #FFF5F5 !important;
+    }
+    
+    .advice-card.wen {
+        background: #FFFBF0 !important;
+    }
+    
+    .advice-card.bao {
+        background: #F0FFF0 !important;
+    }
+    
+    .advice-card h4 {
+        font-size: 9pt;
+        color: #000;
+    }
+    
+    .advice-card p {
+        font-size: 8pt;
+        color: #333;
+    }
+    
+    /* 分页控制 */
+    .result-card {
+        page-break-inside: avoid;
+    }
+    
+    /* 打印链接处理 */
+    a {
+        text-decoration: none;
+        color: inherit;
+    }
+}
