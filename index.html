@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>云南高考志愿填报智能分析 - 康迪格优升学</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        
+        <!-- 机构头部 -->
+        <header class="brand-header">
+            <div class="brand-content">
+                <div class="brand-logo">
+                    <div class="logo-icon">🎓</div>
+                    <div class="logo-text">
+                        <span class="brand-name">康迪格优升学</span>
+                        <span class="brand-slogan">科学规划 · 精准填报 · 圆梦名校</span>
+                    </div>
+                </div>
+                <div class="brand-features">
+                    <div class="feature-item">
+                        <span class="feature-icon">📊</span>
+                        <span class="feature-text">大数据分析</span>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-icon">🎯</span>
+                        <span class="feature-text">精准推荐</span>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-icon">✅</span>
+                        <span class="feature-text">专业权威</span>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- 页面标题区 -->
+        <section class="page-title">
+            <div class="title-wrapper">
+                <h1 class="main-title">
+                    <span class="title-icon">📋</span>
+                    云南高考志愿填报智能分析工具
+                </h1>
+                <p class="subtitle">2025年新高考「3+1+2」模式 · 平行志愿 · 冲稳保三梯度推荐</p>
+            </div>
+            <div class="policy-info">
+                <div class="policy-item">
+                    <span class="policy-label">📅 志愿批次</span>
+                    <span class="policy-value">本科批B段 · 40个院校专业组</span>
+                </div>
+                <div class="policy-item">
+                    <span class="policy-label">📈 云南分数线</span>
+                    <span class="policy-value">历史类 <strong>465分</strong> / 物理类 <strong>430分</strong></span>
+                </div>
+            </div>
+        </section>
+
+        <!-- 输入表单区域 -->
+        <section class="input-section">
+            <div class="section-header">
+                <h2>
+                    <span class="section-icon">✏️</span>
+                    请填写您的信息
+                </h2>
+                <p class="section-desc">根据您的分数和专业意向，智能匹配最适合的学校</p>
+            </div>
+            
+            <!-- 表单不再使用submit，改用普通按钮触发 -->
+            <form id="志愿分析表单">
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="考生类别">
+                            <span class="label-icon">🏷️</span>
+                            考生类别 <span class="required">*</span>
+                        </label>
+                        <div class="select-wrapper">
+                            <select id="考生类别">
+                                <option value="">请选择考生类别</option>
+                                <option value="历史类">📖 历史类（文科）</option>
+                                <option value="物理类">📖 物理类（理科）</option>
+                            </select>
+                            <span class="select-arrow">▼</span>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="高考分数">
+                            <span class="label-icon">📝</span>
+                            高考分数 <span class="required">*</span>
+                        </label>
+                        <div class="input-wrapper">
+                            <input type="number" id="高考分数" placeholder="请输入高考分数（180-750分）" min="180" max="750">
+                            <span class="input-unit">分</span>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="意向专业">
+                            <span class="label-icon">💼</span>
+                            意向专业
+                        </label>
+                        <div class="input-wrapper">
+                            <input type="text" id="意向专业" placeholder="如：计算机科学与技术、会计学">
+                            <span class="input-hint">选填</span>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="意向地区">
+                            <span class="label-icon">📍</span>
+                            意向地区
+                        </label>
+                        <div class="select-wrapper">
+                            <select id="意向地区">
+                                <option value="">全国（不限）</option>
+                                <option value="云南昆明">🏙️ 云南昆明</option>
+                                <option value="云南大理">🏯 云南大理</option>
+                                <option value="云南曲靖">🌆 云南曲靖</option>
+                                <option value="云南玉溪">💧 云南玉溪</option>
+                                <option value="云南丽江">🏔️ 云南丽江</option>
+                                <option value="云南楚雄">🌳 云南楚雄</option>
+                                <option value="云南蒙自">🌴 云南蒙自</option>
+                                <option value="云南昭通">⛰️ 云南昭通</option>
+                                <option value="云南保山">🌿 云南保山</option>
+                                <option value="云南普洱">🍵 云南普洱</option>
+                            </select>
+                            <span class="select-arrow">▼</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="form-actions">
+                    <!-- 使用普通button而非submit，彻底避免表单提交问题 -->
+                    <button type="button" id="开始分析按钮" class="btn btn-primary" onclick="开始分析()">
+                        <span class="btn-icon">🔍</span> 
+                        <span class="btn-text">开始智能分析</span>
+                    </button>
+                    <button type="button" id="重置按钮" class="btn btn-secondary" onclick="重置表单()">
+                        <span class="btn-icon">🔄</span>
+                        <span class="btn-text">重置</span>
+                    </button>
+                </div>
+            </form>
+        </section>
+
+        <!-- 打印按钮区域 -->
+        <div id="打印按钮区域" class="print-action-bar" style="display: none;">
+            <button onclick="window.print()" class="btn btn-print">
+                <span class="btn-icon">🖨️</span> 
+                <span class="btn-text">打印 / 导出PDF</span>
+            </button>
+        </div>
+
+        <!-- 加载提示 -->
+        <div id="加载提示" class="loading" style="display: none;">
+            <div class="loading-content">
+                <div class="loading-spinner">
+                    <div class="spinner-ring"></div>
+                    <div class="spinner-ring"></div>
+                    <div class="spinner-ring"></div>
+                </div>
+                <p class="loading-text">正在分析您的志愿信息，请稍候...</p>
+                <p class="loading-sub">基于海量数据，智能匹配最优方案</p>
+            </div>
+        </div>
+
+        <!-- 分析结果区域 -->
+        <section id="结果区域" class="results-section" style="display: none;">
+            
+            <!-- 学校推荐 -->
+            <div class="result-card">
+                <h2>
+                    <span class="card-icon">🏫</span>
+                    推荐学校列表（冲稳保三梯度）
+                </h2>
+                <div id="学校列表" class="school-list"></div>
+            </div>
+            
+            <!-- 就业分析 -->
+            <div class="result-card">
+                <h2>
+                    <span class="card-icon">💼</span>
+                    专业就业方向分析
+                </h2>
+                <div id="就业分析"></div>
+            </div>
+            
+            <!-- 考公岗位 -->
+            <div class="result-card">
+                <h2>
+                    <span class="card-icon">🏛️</span>
+                    可报公务员岗位
+                </h2>
+                <div id="考公岗位"></div>
+            </div>
+            
+            <!-- 填报建议 -->
+            <div class="result-card">
+                <h2>
+                    <span class="card-icon">📋</span>
+                    志愿填报建议
+                </h2>
+                <div id="填报建议"></div>
+            </div>
+            
+            <!-- 底部打印按钮 -->
+            <div class="print-footer">
+                <button onclick="window.print()" class="btn btn-print">
+                    <span class="btn-icon">🖨️</span> 
+                    <span class="btn-text">打印 / 导出PDF</span>
+                </button>
+            </div>
+            
+        </section>
+
+        <!-- 页脚 -->
+        <footer class="footer">
+            <div class="footer-brand">
+                <span class="footer-logo">🎓</span>
+                <span class="footer-org">康迪格优升学</span>
+            </div>
+            <p class="footer-note">⚠️ 本工具仅供参考，请以云南省招生考试院官方数据为准</p>
+            <p class="footer-year">云南高考志愿填报智能分析工具 · 2025年版</p>
+        </footer>
+    </div>
+
+    <script src="js/app.js?v=3.0"></script>
+    
+    <!-- 全局函数，供按钮调用 -->
+    <script>
+        // 开始分析函数
+        function 开始分析() {
+            console.log('[INFO] 开始分析被调用');
+            
+            const category = document.getElementById('考生类别').value;
+            const scoreStr = document.getElementById('高考分数').value;
+            const major = document.getElementById('意向专业').value.trim();
+            const region = document.getElementById('意向地区').value;
+            
+            // 验证
+            if (!category) {
+                alert('请选择考生类别');
+                return;
+            }
+            if (!scoreStr) {
+                alert('请输入高考分数');
+                return;
+            }
+            
+            const score = parseInt(scoreStr);
+            if (isNaN(score) || score < 180 || score > 750) {
+                alert('请输入有效的分数（180-750分）');
+                return;
+            }
+            
+            // 显示加载
+            document.getElementById('加载提示').style.display = 'block';
+            document.getElementById('结果区域').style.display = 'none';
+            document.getElementById('打印按钮区域').style.display = 'none';
+            
+            // 延迟执行，让UI先更新
+            setTimeout(function() {
+                // 调用 app.js 中的逻辑
+                if (typeof 执行分析 === 'function') {
+                    执行分析(category, score, major, region);
+                } else if (typeof analyze === 'function') {
+                    // 兼容旧函数名
+                    document.getElementById('考生类别').value = category;
+                    document.getElementById('高考分数').value = score;
+                    document.getElementById('意向专业').value = major;
+                    document.getElementById('意向地区').value = region;
+                    analyze();
+                } else {
+                    console.error('[ERROR] 未找到分析函数');
+                    alert('系统错误，请刷新页面后重试');
+                    document.getElementById('加载提示').style.display = 'none';
+                }
+            }, 50);
+        }
+        
+        // 重置表单函数
+        function 重置表单() {
+            console.log('[INFO] 重置表单被调用');
+            document.getElementById('考生类别').value = '';
+            document.getElementById('高考分数').value = '';
+            document.getElementById('意向专业').value = '';
+            document.getElementById('意向地区').value = '';
+            document.getElementById('结果区域').style.display = 'none';
+            document.getElementById('加载提示').style.display = 'none';
+            document.getElementById('打印按钮区域').style.display = 'none';
+        }
+    </script>
+</body>
+</html>
